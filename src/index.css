@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background-color: #050A14;
+  color: #E2E8F0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100%;
+}
+
+body {
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.022) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Keyframes ── */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(-10px) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes rankReveal {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes winReveal {
+  0%   { opacity: 0; transform: scale(0.6) rotate(-6deg); }
+  70%  { transform: scale(1.08) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* ── Global button polish ── */
+button {
+  cursor: pointer;
+}
+button:not(:disabled):hover {
+  filter: brightness(1.1);
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* ── Select dark background fix ── */
+select {
+  background-color: #0d1117;
+  color: #e2e8f0;
+}
+select option {
+  background-color: #0d1117;
+  color: #e2e8f0;
+}
